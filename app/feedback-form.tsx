@@ -5,11 +5,17 @@ import { Card } from "@/components/ui/card"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
-import ThankYouPage from './thank-you-page'
 import { motion } from 'framer-motion'
 import { Button } from "@/components/ui/button"
 
-const EmojiReaction = ({ emoji, label, selected, onClick }) => (
+interface EmojiReactionProps {
+  emoji: string;
+  label: string;
+  selected: boolean;
+  onClick: () => void;
+}
+
+const EmojiReaction = ({ emoji, label, selected, onClick }: EmojiReactionProps) => (
   <button
     type="button"
     className={`p-2 rounded-full transition-colors ${
@@ -23,7 +29,12 @@ const EmojiReaction = ({ emoji, label, selected, onClick }) => (
   </button>
 )
 
-const StarRating = ({ rating, setRating }) => {
+interface StarRatingProps {
+  rating: number;
+  setRating: (rating: number) => void;
+}
+
+const StarRating = ({ rating, setRating }: StarRatingProps) => {
   return (
     <div className="flex space-x-1">
       {[1, 2, 3, 4, 5].map((star) => (
@@ -42,23 +53,22 @@ const StarRating = ({ rating, setRating }) => {
   )
 }
 
-export default function Questionnaire() {
+interface FeedbackFormProps {
+  onSubmit: () => void;
+}
+
+export function FeedbackForm({ onSubmit }: FeedbackFormProps) {
   const [enjoyment, setEnjoyment] = useState('')
   const [topic, setTopic] = useState('')
   const [engaging, setEngaging] = useState(0)
   const [again, setAgain] = useState('')
-  const [submitted, setSubmitted] = useState(false)
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
     // Process the form data
     console.log({ enjoyment, topic, engaging, again })
-    // Set submitted to true to navigate to the next page
-    setSubmitted(true)
-  }
-
-  if (submitted) {
-    return <ThankYouPage />
+    // Call the onSubmit prop
+    onSubmit()
   }
 
   return (
