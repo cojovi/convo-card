@@ -1,5 +1,5 @@
 // Import the createTheme utility from your UI component library
-import { createTheme } from "../components/ui/theme";
+import { createTheme } from "@/components/ui/theme";
 
 // Define the dark theme configuration
 export const darkTheme = createTheme({

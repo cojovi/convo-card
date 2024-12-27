@@ -2,32 +2,29 @@
 
 import React from 'react'
 import { motion } from 'framer-motion'
-import { Card } from "@/components/ui/card"
 
-export default function NoResponsePage() {
+const NoResponsePage = () => {
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      className="min-h-screen bg-gradient-to-br from-gray-800 via-gray-900 to-black flex items-center justify-center p-4"
-    >
-      <Card className="w-full max-w-2xl bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg text-white p-8 rounded-xl shadow-xl">
-        <motion.div
-          initial={{ scale: 0 }}
-          animate={{ scale: 1 }}
-          transition={{ type: "spring", stiffness: 260, damping: 20 }}
-          className="text-center"
-        >
-          <h1 className="text-3xl font-bold mb-6">
-            You've shared access to your photos.
-          </h1>
-          <p className="text-xl mb-4">
-            'DaddysFone' now has full access to your photo albums.
-          </p>
-        </motion.div>
-      </Card>
-    </motion.div>
+    <div className="min-h-screen bg-background flex flex-col items-center justify-center p-4">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        className="text-center"
+      >
+        <h1 className="text-4xl font-bold text-primary mb-4">
+          No Response Recorded
+        </h1>
+        <p className="text-xl text-primary/80 mb-6">
+          We noticed you haven&apos;t provided any feedback.
+        </p>
+        <p className="text-lg text-primary/70">
+          That&apos;s okay! We&apos;ll catch you next time.
+        </p>
+      </motion.div>
+    </div>
   )
 }
+
+export default NoResponsePage
 

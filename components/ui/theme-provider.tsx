@@ -3,11 +3,10 @@ import { ThemeProvider as NextThemeProvider } from 'next-themes'
 
 interface ThemeProviderProps {
   children: ReactNode
-  theme: any
   defaultTheme: string
 }
 
-const ThemeProvider = ({ children, theme, defaultTheme }: ThemeProviderProps) => {
+const ThemeProvider = ({ children, defaultTheme }: ThemeProviderProps) => {
   return (
     <NextThemeProvider attribute="class" defaultTheme={defaultTheme} enableSystem={false}>
       {children}

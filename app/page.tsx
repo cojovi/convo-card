@@ -1,19 +1,15 @@
 'use client'
 
 import React, { useState } from 'react'
-import { Card } from "@/components/ui/card"
-import { Label } from "@/components/ui/label"
-import { Textarea } from "@/components/ui/textarea"
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
-import ThankYouPage from './thank-you-page'
 import { motion } from 'framer-motion'
+import { Card } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
+import ThankYouPage from './thank-you-page'
 
-const Page = () => {
-  const [response, setResponse] = useState(null)
+export default function Home() {
   const [formSubmitted, setFormSubmitted] = useState(false)
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     setFormSubmitted(true)
   }
@@ -23,35 +19,28 @@ const Page = () => {
   }
 
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.5 }}
-    >
-      <Card>
-        <h1 className="text-xl font-bold">Questionnaire</h1>
-        <form onSubmit={handleSubmit}>
-          <div>
-            <Label htmlFor="feedback">Your Feedback</Label>
-            <Textarea
-              id="feedback"
-              placeholder="Enter your feedback here"
-              value={response}
-              onChange={(e) => setResponse(e.target.value)}
-            />
-          </div>
-          <div>
-            <Label>Would you recommend this product?</Label>
-            <RadioGroup value={response} onValueChange={setResponse}>
-              <RadioGroupItem value="Yes" id="yes" label="Yes" />
-              <RadioGroupItem value="No" id="no" label="No" />
-            </RadioGroup>
-          </div>
-          <Button type="submit">Submit</Button>
+    <div className="min-h-screen bg-background flex items-center justify-center p-4">
+      <Card className="w-full max-w-2xl bg-card text-card-foreground p-8 rounded-xl shadow-xl">
+        <form onSubmit={handleSubmit} className="space-y-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+          >
+            <h1 className="text-3xl font-bold mb-6 text-center">
+              How was your conversation?
+            </h1>
+            <div className="space-y-4">
+              <Button
+                type="submit"
+                className="w-full py-6 text-lg"
+              >
+                Submit Feedback
+              </Button>
+            </div>
+          </motion.div>
         </form>
       </Card>
-    </motion.div>
+    </div>
   )
 }
-
-export default Page
