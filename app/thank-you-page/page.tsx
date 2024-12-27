@@ -6,7 +6,7 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Link from 'next/link';
 
-const ThankYouPage = () => {
+export default function ThankYouPage() {
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -39,7 +39,4 @@ const ThankYouPage = () => {
       </Card>
     </motion.div>
   );
-};
-
-export default ThankYouPage;
-
+} 
