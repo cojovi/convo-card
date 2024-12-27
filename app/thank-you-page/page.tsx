@@ -12,18 +12,20 @@ export default function ThankYouPage() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      className="min-h-screen bg-background flex items-center justify-center p-4"
+      className="min-h-screen bg-gradient-to-br from-purple-700 via-pink-600 to-red-500 flex items-center justify-center p-4"
     >
-      <Card className="w-full max-w-2xl bg-card text-card-foreground p-8 rounded-xl shadow-xl">
+      <Card className="w-full max-w-2xl bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg text-white p-8 rounded-xl shadow-xl">
         <motion.div
           initial={{ scale: 0 }}
           animate={{ scale: 1 }}
           transition={{ type: "spring", stiffness: 260, damping: 20 }}
           className="text-center"
         >
-          <h1 className="text-3xl font-bold mb-6">Thank You!</h1>
+          <h1 className="text-4xl font-bold mb-6">
+            Thank you for taking the time!
+          </h1>
           <p className="text-xl mb-8">
-            We&apos;ve received your feedback. It helps us improve!
+            Your feedback is greatly appreciated.
           </p>
           <div className="space-y-4">
             <Link href="/" passHref>

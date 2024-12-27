@@ -63,12 +63,34 @@ export function FeedbackForm({ onSubmit }: FeedbackFormProps) {
   const [engaging, setEngaging] = useState(0)
   const [again, setAgain] = useState('')
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    // Process the form data
-    console.log({ enjoyment, topic, engaging, again })
-    // Call the onSubmit prop
-    onSubmit()
+    
+    try {
+      // Process the form data
+      const formData = { enjoyment, topic, engaging, again }
+      
+      // Log the form data (for development)
+      console.log('Form submitted:', formData)
+      
+      // Call the API endpoint (if needed)
+      const response = await fetch('/api/feedback', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      })
+
+      if (!response.ok) {
+        throw new Error('Failed to submit feedback')
+      }
+
+      // Call the onSubmit callback to handle navigation
+      onSubmit()
+    } catch (error) {
+      console.error('Error submitting feedback:', error)
+    }
   }
 
   return (
