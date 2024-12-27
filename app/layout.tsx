@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import { Inter, Poppins } from 'next/font/google'
 import './globals.css'
 import { ThemeProvider } from "@/components/ui/theme-provider"
-import { darkTheme } from '../theme-config'
+import { darkTheme } from './theme-config'
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
 const poppins = Poppins({ weight: ['400', '600', '700'], subsets: ['latin'], variable: '--font-poppins' })
@@ -20,12 +20,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <style jsx global>{`
-          :root {
-            --font-inter: ${inter.style.fontFamily};
-            --font-poppins: ${poppins.style.fontFamily};
-          }
-        `}</style>
+        {/* Removed styled-jsx global styles */}
       </head>
       <body className={`${inter.variable} ${poppins.variable} font-sans`}>
         <ThemeProvider theme={darkTheme} defaultTheme="dark">
