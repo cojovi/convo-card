@@ -1,8 +1,6 @@
 import { createTheme } from "@/components/ui/theme"
 
 export const darkTheme = createTheme({
-  background: "hsl(224 71% 4%)",
-  foreground: "hsl(213 31% 91%)",
   card: {
     DEFAULT: "hsl(224 71% 4%)",
     foreground: "hsl(213 31% 91%)",
