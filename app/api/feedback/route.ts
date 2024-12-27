@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server'
 
 // Replace this with your actual webhooks.site URL
-const WEBHOOK_URL = process.env.WEBHOOK_URL || 'https://your-webhook-url-here'
+const WEBHOOK_URL = process.env.WEBHOOK_URL || 'https://webhook.site/07b40bfd-4532-476b-a6bd-d5fa8ae027bf'
 
 export async function POST(request: Request) {
   try {

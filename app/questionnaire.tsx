@@ -5,17 +5,11 @@ import { Card } from "@/components/ui/card"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
+import ThankYouPage from './thank-you-page'
 import { motion } from 'framer-motion'
 import { Button } from "@/components/ui/button"
 
-interface EmojiReactionProps {
-  emoji: string;
-  label: string;
-  selected: boolean;
-  onClick: () => void;
-}
-
-const EmojiReaction = ({ emoji, label, selected, onClick }: EmojiReactionProps) => (
+const EmojiReaction = ({ emoji, label, selected, onClick }: { emoji: string; label: string; selected: boolean; onClick: () => void }) => (
   <button
     type="button"
     className={`p-2 rounded-full transition-colors ${
@@ -29,12 +23,7 @@ const EmojiReaction = ({ emoji, label, selected, onClick }: EmojiReactionProps) 
   </button>
 )
 
-interface StarRatingProps {
-  rating: number;
-  setRating: (rating: number) => void;
-}
-
-const StarRating = ({ rating, setRating }: StarRatingProps) => {
+const StarRating = ({ rating, setRating }: { rating: number; setRating: (rating: number) => void }) => {
   return (
     <div className="flex space-x-1">
       {[1, 2, 3, 4, 5].map((star) => (
@@ -53,51 +42,23 @@ const StarRating = ({ rating, setRating }: StarRatingProps) => {
   )
 }
 
-interface FeedbackFormProps {
-  onSubmit: () => void;
-}
-
-export function FeedbackForm({ onSubmit }: FeedbackFormProps) {
+export default function Questionnaire() {
   const [enjoyment, setEnjoyment] = useState('')
   const [topic, setTopic] = useState('')
   const [engaging, setEngaging] = useState(0)
   const [again, setAgain] = useState('')
+  const [submitted, setSubmitted] = useState(false)
 
-  console.log('Environment Variable:', process.env.NEXT_PUBLIC_WEBHOOK_URL)
-
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    
-    try {
-      // Process the form data
-      const formData = { enjoyment, topic, engaging, again }
-      
-      // Log the form data (for development)
-      console.log('Form submitted:', formData)
-      
-      // Ensure the webhook URL is correctly set up
-      const WEBHOOK_URL = process.env.NEXT_PUBLIC_WEBHOOK_URL || 'https://your-webhook-url-here'
-      console.log('Using Webhook URL:', WEBHOOK_URL)
-      
-      // Call the API endpoint (if needed)
-      const response = await fetch(WEBHOOK_URL, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      })
+    // Process the form data
+    console.log({ enjoyment, topic, engaging, again })
+    // Set submitted to true to navigate to the next page
+    setSubmitted(true)
+  }
 
-      if (!response.ok) {
-        throw new Error('Failed to submit feedback')
-      }
-
-      // Call the onSubmit callback to handle navigation
-      onSubmit()
-    } catch (error) {
-      console.error('Error submitting feedback:', error)
-      alert('There was an error submitting your feedback. Please try again later.')
-    }
+  if (submitted) {
+    return <ThankYouPage />
   }
 
   return (

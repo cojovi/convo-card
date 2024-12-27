@@ -6,7 +6,7 @@ import { Card } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import NoResponsePage from './no-response-page'
 
-const AnimatedText = ({ children }: { children: React.ReactNode }) => (
+const AnimatedText = ({ children }) => (
   <motion.span
     initial={{ opacity: 0, y: 20 }}
     animate={{ opacity: 1, y: 0 }}
@@ -16,7 +16,7 @@ const AnimatedText = ({ children }: { children: React.ReactNode }) => (
   </motion.span>
 )
 
-const AnimatedButton = ({ children, onClick, className }: { children: React.ReactNode, onClick: () => void, className: string }) => (
+const AnimatedButton = ({ children, onClick, className }) => (
   <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
     <Button onClick={onClick} className={className}>
       {children}
