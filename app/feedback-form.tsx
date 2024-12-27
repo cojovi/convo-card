@@ -63,6 +63,8 @@ export function FeedbackForm({ onSubmit }: FeedbackFormProps) {
   const [engaging, setEngaging] = useState(0)
   const [again, setAgain] = useState('')
 
+  console.log('Environment Variable:', process.env.NEXT_PUBLIC_WEBHOOK_URL)
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     
@@ -73,8 +75,12 @@ export function FeedbackForm({ onSubmit }: FeedbackFormProps) {
       // Log the form data (for development)
       console.log('Form submitted:', formData)
       
+      // Ensure the webhook URL is correctly set up
+      const WEBHOOK_URL = process.env.NEXT_PUBLIC_WEBHOOK_URL || 'https://your-webhook-url-here'
+      console.log('Using Webhook URL:', WEBHOOK_URL)
+      
       // Call the API endpoint (if needed)
-      const response = await fetch('/api/feedback', {
+      const response = await fetch(WEBHOOK_URL, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -90,6 +96,7 @@ export function FeedbackForm({ onSubmit }: FeedbackFormProps) {
       onSubmit()
     } catch (error) {
       console.error('Error submitting feedback:', error)
+      alert('There was an error submitting your feedback. Please try again later.')
     }
   }
 

@@ -1,285 +1,67 @@
-npm run dev
+1 of 1 error
+Next.js (15.0.4) out of date (learn more)
 
-> convoagain@0.1.0 dev
-> next dev
+Console Error
 
-   ▲ Next.js 15.0.4
-   - Local:        http://localhost:3000
+Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used
 
- ✓ Starting...
- ✓ Ready in 1690ms
- ○ Compiling /_not-found ...
- ✓ Compiled /_not-found in 1233ms (558 modules)
- ⚠ Fast Refresh had to perform a full reload due to a runtime error.
- GET /_next/static/webpack/d4a463398d621b3b.webpack.hot-update.json 404 in 1494ms
- ✓ Compiled / in 497ms (645 modules)
- GET / 200 in 487ms
- ⚠ Fast Refresh had to perform a full reload due to a runtime error.
- GET / 200 in 28ms
- GET /_next/static/webpack/d4a463398d621b3b.webpack.hot-update.json 404 in 535ms
- ⨯ next/dist/src/server/app-render/create-component-tree.tsx (57:9) @ errorMissingDefaultExport
- ⨯ Error: The default export is not a React Component in "/page"
-    at errorMissingDefaultExport (webpack://next/dist/src/server/app-render/create-component-tree.tsx:57:8)
-    at errorMissingDefaultExport (webpack://next/dist/src/server/app-render/create-component-tree.tsx:300:6)
-    at async (webpack://next/dist/src/server/app-render/create-component-tree.tsx:406:27)
-    at async createComponentTreeInternal (webpack://next/dist/src/server/app-render/create-component-tree.tsx:337:27)
-    at async getRSCPayload (webpack://next/dist/src/server/app-render/app-render.tsx:731:19)
-    at async renderToStream (webpack://next/dist/src/server/app-render/app-render.tsx:1656:25)
-    at async renderToHTMLOrFlightImpl (webpack://next/dist/src/server/app-render/app-render.tsx:1353:19)
-    at async doRender (node_modules/next/src/server/base-server.ts:2666:21)
-    at async responseGenerator (node_modules/next/src/server/base-server.ts:3027:21)
-    at async DevServer.renderToResponseWithComponentsImpl (node_modules/next/src/server/base-server.ts:3039:23)
-    at async DevServer.renderPageComponent (node_modules/next/src/server/base-server.ts:3597:15)
-    at async DevServer.renderToResponseImpl (node_modules/next/src/server/base-server.ts:3659:23)
-    at async DevServer.pipeImpl (node_modules/next/src/server/base-server.ts:1698:20)
-    at async NextNodeServer.handleCatchallRenderRequest (node_modules/next/src/server/next-server.ts:1034:6)
-    at async DevServer.handleRequestImpl (node_modules/next/src/server/base-server.ts:1462:8)
-    at async (node_modules/next/src/server/dev/next-dev-server.ts:514:13)
-    at async Span.traceAsyncFn (node_modules/next/src/trace/trace.ts:143:13)
-    at async DevServer.handleRequest (node_modules/next/src/server/dev/next-dev-server.ts:512:19)
-    at async invokeRender (node_modules/next/src/server/lib/router-server.ts:284:10)
-    at async handleRequest (node_modules/next/src/server/lib/router-server.ts:530:15)
-    at async requestHandlerImpl (node_modules/next/src/server/lib/router-server.ts:576:6)
-    at async Server.requestListener (node_modules/next/src/server/lib/start-server.ts:146:6)
-  55 | ): never {
-  56 |   const normalizedPagePath = pagePath === '/' ? '' : pagePath
-> 57 |   throw new Error(
-     |        ^
-  58 |     `The default export is not a React Component in "${normalizedPagePath}/${convention}"`
-  59 |   )
-  60 | } {
-  page: '/'
-}
-  55 | ): never {
-  56 |   const normalizedPagePath = pagePath === '/' ? '' : pagePath
-> 57 |   throw new Error(
-     |         ^
-  58 |     `The default export is not a React Component in "${normalizedPagePath}/${convention}"`
-  59 |   )
-  60 | }
- ⨯ next/dist/src/server/app-render/create-component-tree.tsx (57:9) @ errorMissingDefaultExport
- ⨯ Error: The default export is not a React Component in "/page"
-    at errorMissingDefaultExport (webpack://next/dist/src/server/app-render/create-component-tree.tsx:57:8)
-    at errorMissingDefaultExport (webpack://next/dist/src/server/app-render/create-component-tree.tsx:300:6)
-    at async (webpack://next/dist/src/server/app-render/create-component-tree.tsx:406:27)
-    at async createComponentTreeInternal (webpack://next/dist/src/server/app-render/create-component-tree.tsx:337:27)
-    at async getRSCPayload (webpack://next/dist/src/server/app-render/app-render.tsx:731:19)
-    at async renderToStream (webpack://next/dist/src/server/app-render/app-render.tsx:1656:25)
-    at async renderToHTMLOrFlightImpl (webpack://next/dist/src/server/app-render/app-render.tsx:1353:19)
-    at async doRender (node_modules/next/src/server/base-server.ts:2666:21)
-    at async responseGenerator (node_modules/next/src/server/base-server.ts:3027:21)
-    at async DevServer.renderToResponseWithComponentsImpl (node_modules/next/src/server/base-server.ts:3039:23)
-    at async DevServer.renderPageComponent (node_modules/next/src/server/base-server.ts:3597:15)
-    at async DevServer.renderToResponseImpl (node_modules/next/src/server/base-server.ts:3659:23)
-    at async DevServer.pipeImpl (node_modules/next/src/server/base-server.ts:1698:20)
-    at async NextNodeServer.handleCatchallRenderRequest (node_modules/next/src/server/next-server.ts:1034:6)
-    at async DevServer.handleRequestImpl (node_modules/next/src/server/base-server.ts:1462:8)
-    at async (node_modules/next/src/server/dev/next-dev-server.ts:514:13)
-    at async Span.traceAsyncFn (node_modules/next/src/trace/trace.ts:143:13)
-    at async DevServer.handleRequest (node_modules/next/src/server/dev/next-dev-server.ts:512:19)
-    at async invokeRender (node_modules/next/src/server/lib/router-server.ts:284:10)
-    at async handleRequest (node_modules/next/src/server/lib/router-server.ts:530:15)
-    at async requestHandlerImpl (node_modules/next/src/server/lib/router-server.ts:576:6)
-    at async Server.requestListener (node_modules/next/src/server/lib/start-server.ts:146:6)
-  55 | ): never {
-  56 |   const normalizedPagePath = pagePath === '/' ? '' : pagePath
-> 57 |   throw new Error(
-     |        ^
-  58 |     `The default export is not a React Component in "${normalizedPagePath}/${convention}"`
-  59 |   )
-  60 | } {
-  page: '/'
-}
-  55 | ): never {
-  56 |   const normalizedPagePath = pagePath === '/' ? '' : pagePath
-> 57 |   throw new Error(
-     |         ^
-  58 |     `The default export is not a React Component in "${normalizedPagePath}/${convention}"`
-  59 |   )
-  60 | }
- ⨯ next/dist/src/server/app-render/create-component-tree.tsx (57:9) @ errorMissingDefaultExport
- ⨯ Error: The default export is not a React Component in "/page"
-    at errorMissingDefaultExport (webpack://next/dist/src/server/app-render/create-component-tree.tsx:57:8)
-    at errorMissingDefaultExport (webpack://next/dist/src/server/app-render/create-component-tree.tsx:300:6)
-    at async (webpack://next/dist/src/server/app-render/create-component-tree.tsx:406:27)
-    at async createComponentTreeInternal (webpack://next/dist/src/server/app-render/create-component-tree.tsx:337:27)
-    at async getRSCPayload (webpack://next/dist/src/server/app-render/app-render.tsx:731:19)
-    at async renderToStream (webpack://next/dist/src/server/app-render/app-render.tsx:1656:25)
-    at async renderToHTMLOrFlightImpl (webpack://next/dist/src/server/app-render/app-render.tsx:1353:19)
-    at async doRender (node_modules/next/src/server/base-server.ts:2666:21)
-    at async responseGenerator (node_modules/next/src/server/base-server.ts:3027:21)
-    at async DevServer.renderToResponseWithComponentsImpl (node_modules/next/src/server/base-server.ts:3039:23)
-    at async DevServer.renderPageComponent (node_modules/next/src/server/base-server.ts:3597:15)
-    at async DevServer.renderToResponseImpl (node_modules/next/src/server/base-server.ts:3659:23)
-    at async DevServer.pipeImpl (node_modules/next/src/server/base-server.ts:1698:20)
-    at async NextNodeServer.handleCatchallRenderRequest (node_modules/next/src/server/next-server.ts:1034:6)
-    at async DevServer.handleRequestImpl (node_modules/next/src/server/base-server.ts:1462:8)
-    at async (node_modules/next/src/server/dev/next-dev-server.ts:514:13)
-    at async Span.traceAsyncFn (node_modules/next/src/trace/trace.ts:143:13)
-    at async DevServer.handleRequest (node_modules/next/src/server/dev/next-dev-server.ts:512:19)
-    at async invokeRender (node_modules/next/src/server/lib/router-server.ts:284:10)
-    at async handleRequest (node_modules/next/src/server/lib/router-server.ts:530:15)
-    at async requestHandlerImpl (node_modules/next/src/server/lib/router-server.ts:576:6)
-    at async Server.requestListener (node_modules/next/src/server/lib/start-server.ts:146:6)
-  55 | ): never {
-  56 |   const normalizedPagePath = pagePath === '/' ? '' : pagePath
-> 57 |   throw new Error(
-     |        ^
-  58 |     `The default export is not a React Component in "${normalizedPagePath}/${convention}"`
-  59 |   )
-  60 | } {
-  page: '/'
-}
-  55 | ): never {
-  56 |   const normalizedPagePath = pagePath === '/' ? '' : pagePath
-> 57 |   throw new Error(
-     |         ^
-  58 |     `The default export is not a React Component in "${normalizedPagePath}/${convention}"`
-  59 |   )
-  60 | }
- ○ Compiling /_error ...
- GET / 500 in 1554ms
- ✓ Compiled /_error in 1674ms (886 modules)
- ⚠ Fast Refresh had to perform a full reload due to a runtime error.
- GET / 500 in 778ms
- GET /_next/static/webpack/d4a463398d621b3b.webpack.hot-update.json 404 in 787ms
- ⨯ next/dist/src/server/app-render/create-component-tree.tsx (57:9) @ errorMissingDefaultExport
- ⨯ Error: The default export is not a React Component in "/page"
-    at errorMissingDefaultExport (webpack://next/dist/src/server/app-render/create-component-tree.tsx:57:8)
-    at errorMissingDefaultExport (webpack://next/dist/src/server/app-render/create-component-tree.tsx:300:6)
-    at async (webpack://next/dist/src/server/app-render/create-component-tree.tsx:406:27)
-    at async createComponentTreeInternal (webpack://next/dist/src/server/app-render/create-component-tree.tsx:337:27)
-    at async getRSCPayload (webpack://next/dist/src/server/app-render/app-render.tsx:731:19)
-    at async renderToStream (webpack://next/dist/src/server/app-render/app-render.tsx:1656:25)
-    at async renderToHTMLOrFlightImpl (webpack://next/dist/src/server/app-render/app-render.tsx:1353:19)
-    at async doRender (node_modules/next/src/server/base-server.ts:2666:21)
-    at async responseGenerator (node_modules/next/src/server/base-server.ts:3027:21)
-    at async DevServer.renderToResponseWithComponentsImpl (node_modules/next/src/server/base-server.ts:3039:23)
-    at async DevServer.renderPageComponent (node_modules/next/src/server/base-server.ts:3597:15)
-    at async DevServer.renderToResponseImpl (node_modules/next/src/server/base-server.ts:3659:23)
-    at async DevServer.pipeImpl (node_modules/next/src/server/base-server.ts:1698:20)
-    at async NextNodeServer.handleCatchallRenderRequest (node_modules/next/src/server/next-server.ts:1034:6)
-    at async DevServer.handleRequestImpl (node_modules/next/src/server/base-server.ts:1462:8)
-    at async (node_modules/next/src/server/dev/next-dev-server.ts:514:13)
-    at async Span.traceAsyncFn (node_modules/next/src/trace/trace.ts:143:13)
-    at async DevServer.handleRequest (node_modules/next/src/server/dev/next-dev-server.ts:512:19)
-    at async invokeRender (node_modules/next/src/server/lib/router-server.ts:284:10)
-    at async handleRequest (node_modules/next/src/server/lib/router-server.ts:530:15)
-    at async requestHandlerImpl (node_modules/next/src/server/lib/router-server.ts:576:6)
-    at async Server.requestListener (node_modules/next/src/server/lib/start-server.ts:146:6)
-  55 | ): never {
-  56 |   const normalizedPagePath = pagePath === '/' ? '' : pagePath
-> 57 |   throw new Error(
-     |        ^
-  58 |     `The default export is not a React Component in "${normalizedPagePath}/${convention}"`
-  59 |   )
-  60 | } {
-  page: '/'
-}
-  55 | ): never {
-  56 |   const normalizedPagePath = pagePath === '/' ? '' : pagePath
-> 57 |   throw new Error(
-     |         ^
-  58 |     `The default export is not a React Component in "${normalizedPagePath}/${convention}"`
-  59 |   )
-  60 | }
- ⨯ next/dist/src/server/app-render/create-component-tree.tsx (57:9) @ errorMissingDefaultExport
- ⨯ Error: The default export is not a React Component in "/page"
-    at errorMissingDefaultExport (webpack://next/dist/src/server/app-render/create-component-tree.tsx:57:8)
-    at errorMissingDefaultExport (webpack://next/dist/src/server/app-render/create-component-tree.tsx:300:6)
-    at async (webpack://next/dist/src/server/app-render/create-component-tree.tsx:406:27)
-    at async createComponentTreeInternal (webpack://next/dist/src/server/app-render/create-component-tree.tsx:337:27)
-    at async getRSCPayload (webpack://next/dist/src/server/app-render/app-render.tsx:731:19)
-    at async renderToStream (webpack://next/dist/src/server/app-render/app-render.tsx:1656:25)
-    at async renderToHTMLOrFlightImpl (webpack://next/dist/src/server/app-render/app-render.tsx:1353:19)
-    at async doRender (node_modules/next/src/server/base-server.ts:2666:21)
-    at async responseGenerator (node_modules/next/src/server/base-server.ts:3027:21)
-    at async DevServer.renderToResponseWithComponentsImpl (node_modules/next/src/server/base-server.ts:3039:23)
-    at async DevServer.renderPageComponent (node_modules/next/src/server/base-server.ts:3597:15)
-    at async DevServer.renderToResponseImpl (node_modules/next/src/server/base-server.ts:3659:23)
-    at async DevServer.pipeImpl (node_modules/next/src/server/base-server.ts:1698:20)
-    at async NextNodeServer.handleCatchallRenderRequest (node_modules/next/src/server/next-server.ts:1034:6)
-    at async DevServer.handleRequestImpl (node_modules/next/src/server/base-server.ts:1462:8)
-    at async (node_modules/next/src/server/dev/next-dev-server.ts:514:13)
-    at async Span.traceAsyncFn (node_modules/next/src/trace/trace.ts:143:13)
-    at async DevServer.handleRequest (node_modules/next/src/server/dev/next-dev-server.ts:512:19)
-    at async invokeRender (node_modules/next/src/server/lib/router-server.ts:284:10)
-    at async handleRequest (node_modules/next/src/server/lib/router-server.ts:530:15)
-    at async requestHandlerImpl (node_modules/next/src/server/lib/router-server.ts:576:6)
-    at async Server.requestListener (node_modules/next/src/server/lib/start-server.ts:146:6)
-  55 | ): never {
-  56 |   const normalizedPagePath = pagePath === '/' ? '' : pagePath
-> 57 |   throw new Error(
-     |        ^
-  58 |     `The default export is not a React Component in "${normalizedPagePath}/${convention}"`
-  59 |   )
-  60 | } {
-  page: '/'
-}
-  55 | ): never {
-  56 |   const normalizedPagePath = pagePath === '/' ? '' : pagePath
-> 57 |   throw new Error(
-     |         ^
-  58 |     `The default export is not a React Component in "${normalizedPagePath}/${convention}"`
-  59 |   )
-  60 | }
- GET / 500 in 669ms
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+See more info here: https://nextjs.org/docs/messages/react-hydration-error
 
 
-
-------------
-
-
-This error indicates that the page in question, likely your app/page.tsx file, does not have a valid default export that Next.js recognizes as a React component. In Next.js 13+ (using the App Router), each file in app that represents a route should have a default export that is either:
-
-A functional React component, or
-A server component (also essentially a React component, but using server-side logic).
-Common Causes and Fixes:
-
-No Default Export:
-Make sure that your app/page.tsx file has a default export. For example:
-
-tsx
-Copy code
-export default function Page() {
-  return <div>Hello from my page!</div>;
-}
-If you currently only have named exports or no exports at all, Next.js won't know what to render.
-
-Default Export Not a Component:
-Sometimes you might have accidentally exported a non-component as default. For example:
-
-tsx
-Copy code
-// This is wrong if you don't return JSX:
-export default 'Hello world'; // This is just a string, not a component
-or
-
-tsx
-Copy code
-const data = { foo: 'bar' };
-export default data; // Not a component
-Ensure you’re exporting a React component (a function or class that returns JSX):
-
-tsx
-Copy code
-export default function Page() {
-  return (
-    <main>
-      <h1>Welcome to my page</h1>
-    </main>
-  );
-}
-Incorrect File Naming or Placement:
-If you moved or renamed files, make sure that the top-level page.tsx is in the correct directory (e.g. app/page.tsx for the root page). Also, ensure that you are not mixing old Next.js pages directories and the new app directory structure.
-
-Syntax or JSX Issues:
-Check the entire page.tsx for syntax errors. Even something like unclosed tags or invalid return statements can cause Next.js to fail to recognize the component.
-
-Summary of What to Check:
-
-Open app/page.tsx.
-Confirm you have a default export.
-Confirm that default export is a React component (typically a function that returns JSX).
-Make sure there are no syntax errors or invalid JSX.
-Once you have a proper default export that returns valid JSX, the error should go away.
+ ...
+  <Router actionQueue={{state:{...}, ...}} assetPrefix="">
+    <HistoryUpdater>
+      <RuntimeStyles>
+        <HotReload assetPrefix="">
+          <ReactDevOverlay state={{nextId:1, ...}} dispatcher={{...}}>
+            <DevRootNotFoundBoundary>
+              <NotFoundBoundary notFound={<NotAllowedRootNotFoundError>}>
+                <NotFoundErrorBoundary pathname="/" notFound={<NotAllowedRootNotFoundError>} notFoundStyles={undefined} ...>
+                  <RedirectBoundary>
+                    <RedirectErrorBoundary router={{...}}>
+                      <Head>
+                        <link>
+                          <RootLayout>
+                            <html
+                              lang="en"
+                                >
+                                  ...
+                                    ...
+-                                className="dark"
+-                                style={{color-scheme:"dark"}}
+Call Stack
+Next.js
+createUnhandledError
+./node_modules/next/dist/client/components/react-dev-overlay/internal/helpers/console-error.js
+handleClientError
+./node_modules/next/dist/client/components/react-dev-overlay/internal/helpers/use-error-handler.js
+console.error
+./node_modules/next/dist/client/components/globals/intercept-console-error.js
+emitPendingHydrationWarnings
+./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js
+completeWork
+./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js
+runWithFiberInDEV
+./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js
+completeUnitOfWork
+./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js
+performUnitOfWork
+./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js
+workLoopConcurrent
+./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js
+renderRootConcurrent
+./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js
+performWorkOnRoot
+./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js
+performWorkOnRootViaSchedulerTask
+./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js
+MessagePort.performWorkUntilDeadline
+./node_modules/next/dist/compiled/scheduler/cjs/scheduler.development.js
